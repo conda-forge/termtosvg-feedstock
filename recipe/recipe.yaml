@@ -1,6 +1,7 @@
 context:
   name: termtosvg
   version: 1.1.0
+  python_min: 3.6
 
 package:
   name: ${{ name|lower }}
@@ -13,17 +14,18 @@ source:
 build:
   number: 1
   noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
     entry_points:
       - termtosvg = termtosvg.main:main
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}.*
+    - setuptools
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - lxml
     - pyte
     - wcwidth
