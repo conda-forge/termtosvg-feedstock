@@ -8,7 +8,7 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/termtosvg-${{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/termtosvg-${{ version }}.tar.gz
   sha256: ed38f1615d7f873e784761d1b406ac73abbd2bbf0c517362f5c2fdc1919d65ee
 
 build:
